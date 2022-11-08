@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   plugins: [vue()],
   build: { outDir: 'docs' },
-  base: '/task-app/'
+  base: process.env.NODE_ENV === 'production' ? '/task-app/' : '/'
   // publicPath: process.env.NODE_ENV === 'production' ? '/task-app/' : '/',
   // base: process.env.NODE_ENV === 'production' ? '/task-app/' : '/',
 //   server: {
